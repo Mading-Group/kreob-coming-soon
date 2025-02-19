@@ -1,8 +1,9 @@
 import {motion} from "motion/react";
 import LogoSrc from "../assets/logo.png";
-import {MdEmail} from "react-icons/md";
+import {MdEmail, MdPhone} from "react-icons/md";
 import {Button} from "./ui/button.tsx";
 import SocialList from "./SocialList.tsx";
+import Tooltip from "@/components/tooltip.tsx";
 
 function Navbar() {
     return (
@@ -21,19 +22,36 @@ function Navbar() {
                     />
                 </div>
                 <motion.div
+                    className="flex items-center space-x-4"
                 >
-                    <Button asChild variant="outline">
-                        <motion.a
-                            whileHover={{
-                                scale: 1.01,
-                            }}
-                            whileTap={{scale: 0.9}}
-                            href="mailto:j.vami@mading-group.com"
-                        >
-                            <MdEmail className="size-5"/>
-                            <span>Nous contacter</span>
-                        </motion.a>
-                    </Button>
+                    <Tooltip content="+225 27 22 24 14 05" direction="bottom" className="text-nowrap">
+                        <Button asChild variant="outline">
+                            <motion.a
+                                whileHover={{
+                                    scale: 1.01,
+                                }}
+                                whileTap={{scale: 0.9}}
+                                href="tel:+2252722241405"
+                            >
+                                <MdPhone className="size-5"/>
+                                <span>Tel</span>
+                            </motion.a>
+                        </Button>
+                    </Tooltip>
+                    <Tooltip content="contact@kreob.com" direction="bottom">
+                        <Button asChild>
+                            <motion.a
+                                whileHover={{
+                                    scale: 1.05,
+                                }}
+                                whileTap={{scale: 0.9}}
+                                href="mailto:contact@kreob.com"
+                            >
+                                <MdEmail className="size-5"/>
+                                <span>Email</span>
+                            </motion.a>
+                        </Button>
+                    </Tooltip>
                 </motion.div>
             </nav>
         </header>
