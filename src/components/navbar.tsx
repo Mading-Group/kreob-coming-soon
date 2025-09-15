@@ -27,6 +27,7 @@ function Navbar() {
                     <Tooltip content="+225 27 22 24 14 05" direction="bottom" className="text-nowrap">
                         <Button asChild variant="outline">
                             <motion.a
+                            className=""
                                 whileHover={{
                                     scale: 1.01,
                                 }}
